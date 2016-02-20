@@ -4,7 +4,7 @@ using System.Collections;
 using LockingPolicy = Thalmic.Myo.LockingPolicy;
 using Pose = Thalmic.Myo.Pose;
 using UnlockType = Thalmic.Myo.UnlockType;
-using VibrationType = Thalmic.Myo.VibrationType;
+//using VibrationType = Thalmic.Myo.VibrationType;
 
 // Change the material when certain poses are made with the Myo armband.
 // Vibrate the Myo armband when a fist pose is made.
@@ -35,7 +35,7 @@ public class ColorBoxByPose : MonoBehaviour
         // currently detected pose (e.g. Pose.Fist for the user making a fist). If no pose is currently
         // detected, pose will be set to Pose.Rest. If pose detection is unavailable, e.g. because Myo
         // is not on a user's arm, pose will be set to Pose.Unknown.
-        if (thalmicMyo.pose != _lastPose) {
+        /*if (thalmicMyo.pose != _lastPose) {
             _lastPose = thalmicMyo.pose;
 
             // Vibrate the Myo armband when a fist is made.
@@ -58,7 +58,7 @@ public class ColorBoxByPose : MonoBehaviour
 
                 ExtendUnlockAndNotifyUserAction (thalmicMyo);
             }
-        }
+        }*/
     }
 
     // Extend the unlock if ThalmcHub's locking policy is standard, and notifies the given myo that a user action was
