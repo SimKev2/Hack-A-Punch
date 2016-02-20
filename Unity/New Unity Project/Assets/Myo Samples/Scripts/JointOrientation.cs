@@ -17,6 +17,8 @@ public class JointOrientation : MonoBehaviour
     public bool fanimate = false;
     public bool ranimate = false;
     public int z_anim = 0;
+    public AudioClip effort;
+    bool playedYet = false;
     //Globals.G_position = new Vector3(0,0,0);
     // Myo game object to connect with.
     // This object must have a ThalmicMyo script attached.
@@ -105,11 +107,18 @@ public class JointOrientation : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, z_anim/(float)5.0);
             z_anim++;
+
+            if (!playedYet)
+            {
+                AudioSource.PlayClipAtPoint(effort, transform.position);
+                playedYet = true;
+            }
         }
         else if (fanimate)
         {
             fanimate = false;
             ranimate = true;
+            playedYet = false;
         }
         else if (z_anim > 0)
         {
