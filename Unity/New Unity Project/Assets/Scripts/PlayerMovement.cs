@@ -4,10 +4,7 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
     public float speed;
     private Rigidbody playerRigidBody;
-
-    Vector3 movement;
-    int floorMask;
-    float camRayLength = 100f;
+    private Vector3 movement;
 
     void Start()
     {
